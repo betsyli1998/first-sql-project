@@ -1,0 +1,51 @@
+SELECT DISTINCT year 
+FROM population_years;
+/* 2000-2010 */
+
+ 
+SELECT *
+FROM population_years
+WHERE country = 'Gabon'
+ORDER BY population DESC
+LIMIT 1; 
+/* largest population = 1.54526 in 2010 */
+
+
+SELECT *
+FROM population_years
+WHERE year = 2005
+ORDER BY population ASC
+LIMIT 10; 
+/*
+  Niue
+  Falkan Islands 
+  Monsterrat
+  Saint Pierre and Miquelon
+  Saint Helena
+  Nauru
+  Cook Islands
+  Turks and Caicos Islands
+  Virgin Islands, British
+  Gibraltar
+*/
+
+
+SELECT DISTINCT country, year, population
+FROM population_years
+WHERE population > 100 AND year = 2010;
+/*
+Mexico, USA, Brazil, Russia, Nigeria, Bangladesh, China, India, Indonesia, Japan Pakistan
+*/
+
+
+SELECT DISTINCT country 
+FROM population_years 
+WHERE country LIKE '%Islands%';
+/* 9 countries with 'Islands' in the name */
+
+
+SELECT country, population, year
+FROM population_years
+WHERE country = 'Indonesia'; 
+/* ~25 million */ 
+
